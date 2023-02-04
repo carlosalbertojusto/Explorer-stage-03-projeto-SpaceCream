@@ -31,14 +31,16 @@ header {
   align-items: center;
   justify-content: center;
   margin-bottom: 4.8rem;
+  animation: topDown 900ms backwards ease;
 }
 
 header img {
   margin-top: 3.2rem;
 }
+
 .background-logo {
   background-color: var(--bg-tertiary);
-  width: 38.5rem;
+  min-width: 38.5rem;
   height: 4.9rem;
   display: flex;
   justify-content: center;
@@ -60,6 +62,7 @@ header img {
 .cards {
   padding: 0 3.2rem 6rem;
   border: 0.5px solid #e9ebf5;
+  animation: DownTop 900ms backwards ease reverse;
 }
 
 .paragraph {
@@ -72,7 +75,7 @@ header img {
 .paragraph p {
   font-family: var(--ff-texting);
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1.5rem;
   color: var(--fc-tertiary);
 
@@ -82,12 +85,33 @@ header img {
   height: 7.5rem;
 }
 
-.card {
+.leftUp,
+.leftBottom,
+.middleBottom,
+.middleUp,
+.rightBottom,
+.rightUp {
   position: relative;
   margin-bottom: 3.2rem;
 }
 
-.card div {
+.leftUp img:hover,
+.leftBottom img:hover,
+.middleBottom img:hover,
+.middleUp img:hover,
+.rightBottom img:hover,
+.rightUp img:hover {
+  filter: brightness(1);
+  animation: pumpedUp 400ms 50ms forwards ease-in;
+  cursor: pointer;
+}
+
+.leftUp div,
+.leftBottom div,
+.middleBottom div,
+.middleUp div,
+.rightBottom div,
+.rightUp div {
   position: absolute;
   top: 0;
   right: 0;
@@ -97,7 +121,12 @@ header img {
   margin: 1.6rem 1.6rem 0 0;
 }
 
-.card div h2 {
+.leftUp div h2,
+.leftBottom div h2,
+.middleUp div h2,
+.middleBottom div h2,
+.rightBottom div h2,
+.rightUp div h2 {
   font-family: var(--ff-heading);
   font-weight: 400;
   font-size: 2rem;
@@ -109,82 +138,226 @@ header img {
   text-align: center;
 }
 
-.card img {
+.leftUp img,
+.leftBottom img,
+.middleBottom img,
+.middleUp img,
+.rightBottom img,
+.rightUp img {
   width: 100%;
   height: auto;
+  filter: saturate(2);
   object-fit: cover;
 }
 
-@media (min-width: 700px) {
-  body {
-    margin: 0;
-    max-width: 100vw;
-    max-height: 100vw;
-  }
+footer p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+  color: var(--fc-secondary);
+}
 
+footer a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--fc-secondary);
+}
+
+@media (min-width: 1250px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
   .page {
     display: flex;
     justify-content: center;
-    max-width: 100vw;
   }
 
+  body {
+    max-width: 100%;
+    max-height: 76rem;
+  }
   header {
-    height: 50vw;
+    height: 51vw;
     max-width: 38.5rem;
-    grid-area: head;
+    animation: slideHead 900ms forwards ease-in;
   }
 
   .paragraph {
+    max-height: 25vw;
+    padding: 0 5.4rem;
     background-color: var(--bg-secondary);
   }
+
   .paragraph p {
     color: var(--fc-primary);
     font-family: "Roboto", sans-serif;
-    font-size: 2.4rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
     text-align: center;
-    height: 7.5rem;
+    width: 27.5rem;
   }
+
   .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas:
-      "paleta shake paleta"
-      "picole massa picole";
+      "leftUp middleUp rightUp"
+      "leftBottom middleUp rightBottom"
+      "leftBottom middleBottom rightBottom"
+      ". footer .";
+    grid-template-rows: 15rem 17rem 15rem;
+    justify-items: center;
     gap: 3.2rem;
-    border: 1px solid red;
-    padding: 6.4rem;
+    padding: 3.2rem 3.2rem 0 3.2rem;
+    animation: slide 900ms forwards ease-in;
   }
 
-  .card {
+  .leftUp {
     margin: 0;
-    height: 100%;
+    max-height: 15rem;
+    max-width: 22rem;
+    grid-area: leftUp;
   }
 
-  .card img {
-    width: 100%;
+  .leftUp div,
+  .leftBottom div,
+  .middleBottom div,
+  .middleUp div,
+  .rightBottom div,
+  .rightUp div {
+    display: none;
   }
 
-  .cards:nth-child(1) {
-    grid-area: paleta;
+  .leftUp img,
+  .middleBottom img,
+  .rightUp img {
+    width: 22rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 2rem;
   }
-  .cards:nth-child(2) {
-    grid-area: shake;
+
+  .leftBottom img,
+  .middleUp img,
+  .rightBottom img {
+    width: 22rem;
+    height: 35rem;
+    object-fit: cover;
+    border-radius: 2rem;
   }
-  .cards:nth-child(3) {
-    grid-area: massa;
+
+  .middleUp {
+    max-height: 35rem;
+    max-width: 22rem;
+    grid-area: middleUp;
   }
-  .cards:nth-child(4) {
-    grid-area: picole;
+
+  .leftBottom {
+    max-height: 35rem;
+    max-width: 22rem;
+    grid-area: leftBottom;
+  }
+
+  .middleBottom {
+    max-height: 15rem;
+    max-width: 22rem;
+    grid-area: middleBottom;
+  }
+
+  .rightBottom {
+    max-height: 15rem;
+    max-width: 22rem;
+    grid-area: rightBottom;
+  }
+  .leftBottom {
+    max-height: 35rem;
+    max-width: 22rem;
+    grid-area: leftBottom;
   }
 
   footer {
+    grid-area: footer;
+  }
+
+  footer p {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2.8rem;
-    text-align: center;
 
     color: var(--fc-secondary);
+  }
+
+  footer a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--fc-secondary);
+  }
+}
+
+@media (max-width: 1250px) {
+  .rightBottom,
+  .rightBottom div {
+    display: none;
+  }
+  .rightUp,
+  .rightUp div {
+    display: none;
+  }
+}
+
+@keyframes slideHead {
+  0% {
+    opacity: 0;
+    transform: translateX(-25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pumpedUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes topDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes DownTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20rem);
   }
 }
