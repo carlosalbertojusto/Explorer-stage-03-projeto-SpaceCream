@@ -1,13 +1,13 @@
 <h1 align="center"> Explorer - Stage 03 | Space Cream</h1>
 
 <p align="center">
-Programa exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB.
+Exclusive program, promoted by Rocketseat for teaching WEB technologies.
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Projects</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </p>
 
 <p align="center">
@@ -17,26 +17,26 @@ Programa exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB.
 <br>
 
 <p align="center">
-  <img alt="Wiki Repositório" src=".github/preview.png" width="100%">
+  <img alt="Wiki Repository" src=".github/preview.png" width="100%">
 </p>
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
 - HTML
 - CSS
 - Git e Github
 - Figma
 
-## 💻 Projeto
+## 💻 Project
 
-Esse projeto foi desenvolvido para o ensino dos fundamentos de HTML e estilização com CSS, apresentação de responsividade e técnica do mobile first
+This project was developed to learn the fundamentals of HTML and styling with CSS, presentation of responsiveness and mobile first technique.
 
-## :memo: Licença
+## :memo: License
 
-Esse projeto está sob a licença MIT.
+This project is licensed under the MIT license.
 
 ---
 
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+Made with ♥ by Rocketseat :wave: [Take part of your community!](https://discord.gg/rocketseat)
